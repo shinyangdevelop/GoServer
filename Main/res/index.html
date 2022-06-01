@@ -7,6 +7,6 @@
     </head>
     <body>
         <h1>{{if .IsLoggedIn}}You are logged in as {{.UserName}}{{else}}You are not logged in{{end}}</h1>
-        {{if not .IsLoggedIn}}<a href="/login">login</a>{{end}}
+        {{if not .IsLoggedIn}}<a href="/login">login</a>{{else}}<a href="/logout">logout</a>{{end}}
     </body>
 </html>

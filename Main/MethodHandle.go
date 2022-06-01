@@ -11,7 +11,7 @@ import (
 func getRoot(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html")
 	template := template2.New("root")
-	content, err := ioutil.ReadFile("Main/res/index.html")
+	content, err := ioutil.ReadFile("res/index.html")
 	if err != nil {
 		log.Fatalf("Error reading file: %v", err)
 	}
@@ -52,7 +52,7 @@ func getLogin(w http.ResponseWriter, r *http.Request) {
 	http.SetCookie(w, &http.Cookie{
 		Name:    "session",
 		Value:   temp,
-		Expires: time.Now().Add(time.Hour),
+		Expires: time.Now().Add(time.Second * 10),
 	})
 	RegisterSession(temp, RootData{
 		IsLoggedIn: true,
@@ -69,5 +69,20 @@ func putLogin(w http.ResponseWriter, r *http.Request) {
 }
 
 func deleteLogin(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func getLogout(w http.ResponseWriter, r *http.Request) {
+}
+
+func postLogout(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func putLogout(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func deleteLogout(w http.ResponseWriter, r *http.Request) {
 
 }

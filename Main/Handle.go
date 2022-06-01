@@ -29,3 +29,16 @@ func handleLogin(w http.ResponseWriter, r *http.Request) {
 		deleteLogin(w, r)
 	}
 }
+
+func handleLogout(w http.ResponseWriter, r *http.Request) {
+	switch r.Method {
+	case "GET":
+		getLogout(w, r)
+	case "POST":
+		postLogout(w, r)
+	case "PUT":
+		putLogout(w, r)
+	case "DELETE":
+		deleteLogout(w, r)
+	}
+}
